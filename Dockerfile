@@ -1,7 +1,8 @@
 FROM node:18.12.1-alpine
 WORKDIR /app
-COPY . .
+COPY package.json /app/
 RUN yarn
+COPY . .
 RUN yarn build
 EXPOSE 3000
 
